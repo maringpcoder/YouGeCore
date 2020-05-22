@@ -1,0 +1,14 @@
+{
+    "name": "marin/you-ge-core",
+    "description": "游鸽核心包",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "marin",
+            "email": "zhengdiao2002@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
