@@ -25,10 +25,7 @@ class Geo
     public function GeoCode($address,$city="")
     {
         $client = Http::singleton();
-        $url = self::GeoBaseUrl.'&address='.$address;
-        if ($city){
-            $url = $url.'&city='.$city;
-        }
+        $url = self::GeoBaseUrl.'&address='.$address.'&city='.$city;
         $rep = $client->get($url);
         if ($rep->getStatusCode() == 200){
             $result = $rep->getBody()->getContents();

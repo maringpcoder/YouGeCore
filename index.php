@@ -10,4 +10,4 @@ require_once 'vendor/autoload.php';
 
 
 $res  = new \YouGeCore\Amap\Geo();
-$res ->GeoCode("四川省成都市蒲江县甘溪学校","成都市");
+var_dump($res ->GeoCode("四川省成都市蒲江县甘溪学校",""));
