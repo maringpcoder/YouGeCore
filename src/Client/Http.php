@@ -8,9 +8,6 @@
 
 namespace YouGeCore\Client;
 
-
-use YouGeCore\Amap\Config;
-
 class Http
 {
     protected static $client=null;
@@ -29,8 +26,23 @@ class Http
         return self::$client;
     }
 
-    public static function get($url)
+    /**
+     * @param $url
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function get($url)
     {
-        self::$guzClient ->get($url);
+        $rsp = self::$guzClient->request("GET",$url);
+        return $rsp;
+    }
+
+
+    /**
+     * @param $url
+     */
+    public function post($url)
+    {
+        self::$guzClient->post();
     }
 }
