@@ -105,7 +105,7 @@ class WxPayResults extends WxPayDataBase
      * 将xml转为array
      * @param WxPayConfigInterface $config 配置对象
      * @param string $xml
-     * @return array|bool
+     * @return array
      * @throws WxPayException
      */
     public static function Init($config, $xml)
@@ -118,7 +118,6 @@ class WxPayResults extends WxPayDataBase
                 #除了return_code和return_msg之外其他的参数存在，则报错
                 if($key != "return_code" && $key != "return_msg"){
                     throw new WxPayException("输入数据存在异常！");
-                    return false;
                 }
             }
             return $obj->GetValues();

@@ -40,7 +40,7 @@ class WxPayApi
      * @param WxPayConfigInterface $config 配置对象
      * @param WxPayUnifiedOrder $inputObj
      * @param int $timeOut
-     * @return array|bool
+     * @return array
      * @throws WxPayException
      */
     public static function unifiedOrder($config, $inputObj, $timeOut = 6)
