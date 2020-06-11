@@ -21,4 +21,5 @@ interface JsApiPramsInterface
     public function getNotifyUrl();
     public function getTradeType();
     public function getOpenid();
+    public function getFreeType();
 }

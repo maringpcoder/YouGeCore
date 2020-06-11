@@ -43,6 +43,7 @@ class WxPayApiAop
         $input->SetNotify_url($params->getNotifyUrl());//http://paysdk.weixin.qq.com/notify.php,异步接收微信支付结果通知的回调地址，通知url必须为外网可访问的url，不能携带参数
         $input->SetTrade_type($params->getTradeType());
         $input->SetOpenid($params->getOpenid());
+        $input->SetFreeType($params->getFreeType());
 
         $order = WxPayApi::unifiedOrder($config, $input);
         $jsApiParameters = $tools->GetJsApiParameters($order);

@@ -477,4 +477,23 @@ class WxPayUnifiedOrder extends WxPayDataBase
     {
         return array_key_exists('openid', $this->values);
     }
+
+    /**
+     * 设置交易币种 默认币种
+     * @param $value
+     * @return mixed
+     */
+    public function SetFreeType($value='CNY')
+    {
+        return $this->values['fee_type'] = $value;
+    }
+
+    /**
+     * 获取交易币种类型
+     * @return mixed
+     */
+    public function GetFreeType()
+    {
+        return $this->values['fee_type'];
+    }
 }
