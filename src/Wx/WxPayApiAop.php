@@ -41,9 +41,9 @@ class WxPayApiAop
         $input->SetTime_start($params->getTimeStart());//格式date(YmdHis,timestamp)
         $input->SetTime_expire($params->getTimeExpire());//$params['time_start'] + 600
         $input->SetNotify_url($params->getNotifyUrl());//http://paysdk.weixin.qq.com/notify.php,异步接收微信支付结果通知的回调地址，通知url必须为外网可访问的url，不能携带参数
-        $input->SetTrade_type($params->getTradeType());
-        $input->SetOpenid($params->getOpenid());
-        $input->SetFreeType($params->getFreeType());
+        $input->SetTrade_type($params->getTradeType());//交易类型 这个地方可以固定成JSAPI即可
+        $input->SetOpenid($params->getOpenid());//用户应用唯一标识
+        $input->SetFreeType($params->getFreeType());//币种
 
         $order = WxPayApi::unifiedOrder($config, $input);
         $jsApiParameters = $tools->GetJsApiParameters($order);
