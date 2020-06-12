@@ -46,7 +46,7 @@ class WxPayApiAop
         $input->SetFreeType($params->getFreeType());//币种
 
         $order = WxPayApi::unifiedOrder($config, $input);
-        $jsApiParameters = $tools->GetJsApiParameters($order);
+        $jsApiParameters = $tools->GetJsApiParameters($order,$config);
         return $jsApiParameters;
     }
 }
