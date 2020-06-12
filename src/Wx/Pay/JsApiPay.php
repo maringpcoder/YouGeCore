@@ -59,11 +59,11 @@ class JsApiPay
      *
      * 获取jsapi支付的参数
      * @param array $UnifiedOrderResult 统一支付接口返回的数据
-     * @throws WxPayException
-     *
+     * @param WxPayConfigInterface $config
      * @return string,json数据，可直接填入js函数作为参数
+     * @throws WxPayException
      */
-    public function GetJsApiParameters($UnifiedOrderResult)
+    public function GetJsApiParameters($UnifiedOrderResult , WxPayConfigInterface $config)
     {
         if(!array_key_exists("appid", $UnifiedOrderResult)
             || !array_key_exists("prepay_id", $UnifiedOrderResult)
@@ -78,8 +78,6 @@ class JsApiPay
         $jsapi->SetTimeStamp("$timeStamp");
         $jsapi->SetNonceStr(WxPayApi::getNonceStr());
         $jsapi->SetPackage("prepay_id=" . $UnifiedOrderResult['prepay_id']);
-
-        $config = new WxPayConfig();
         $jsapi->SetPaySign($jsapi->MakeSign($config));
         $parameters = json_encode($jsapi->GetValues());
         return $parameters;
