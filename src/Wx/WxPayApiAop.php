@@ -12,9 +12,9 @@ namespace YouGeCore\Wx;
 
 use YouGeCore\Wx\Pay\JsApiPay;
 use YouGeCore\Wx\Pay\JsApiPramsInterface;
+use YouGeCore\Wx\Pay\Lib\WxPayRefund;
 use YouGeCore\Wx\Pay\Lib\WxPayUnifiedOrder;
 use YouGeCore\Wx\Pay\WxPayApi;
-use YouGeCore\Wx\Pay\WxPayConfig;
 use YouGeCore\Wx\Pay\WxPayConfigInterface;
 
 
@@ -48,5 +48,19 @@ class WxPayApiAop
         $order = WxPayApi::unifiedOrder($config, $input);
         $jsApiParameters = $tools->GetJsApiParameters($order,$config);
         return $jsApiParameters;
+    }
+
+
+    /**
+     * 申请退款
+     * @param WxPayConfigInterface $wxPayConfig
+     * @param WxPayRefund $inputObj
+     * @return array|bool
+     * @throws Pay\Exception\WxPayException
+     */
+    public function applyWxRefund(WxPayConfigInterface $wxPayConfig, WxPayRefund $inputObj)
+    {
+        $result = WxPayApi::refund($wxPayConfig,$inputObj);
+        return $result;
     }
 }
