@@ -17,7 +17,7 @@ class Common
      * @param int $len
      * @return string
      */
-    public function generateStr($len = 32)
+    public static function generateStr($len = 32)
     {
         $chars = "abcdefghijklmnopqrstuvwxyz0123456789";
         $str = "";
