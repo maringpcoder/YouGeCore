@@ -77,7 +77,7 @@ class Common
     {
         $client = new Http();
         $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=$grantType&appid=$appid&secret=$secret";
-        return $client->get($url);
+        return json_decode($client->get($url),true);
     }
 
 }
