@@ -27,11 +27,13 @@ class Common
     {
         $code = $input->getCode();
         $nonceStr = $input->getNonceStr();
-        $halt = $input->getSalt();
-        if (!$code || !$nonceStr || !$halt) {
-            throw new GenerateCodeSignException("code ,nonceStr,halt 不能为空", 2);
+        $salt = $input->getSalt();
+        $timeStamp = $input ->getTimeStamp();
+
+        if (!$code || !$nonceStr || !$salt || !$timeStamp) {
+            throw new GenerateCodeSignException("code ,nonceStr,halt ,timestamp 不能为空", 2);
         }
-        return md5(md5($code . $nonceStr, $halt));
+        return md5(md5($code . $nonceStr, $input->getTimeStamp()).$salt);
     }
 
     /**
