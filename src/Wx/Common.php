@@ -21,7 +21,7 @@ class Common
      * @return string
      * @throws GenerateCodeSignException
      */
-    public function generateCodeSign(GenerateCodeInterface $input)
+    public static function generateCodeSign(GenerateCodeInterface $input)
     {
         $code = $input::getCode();
         $nonceStr = $input::getNonceStr();
@@ -37,7 +37,7 @@ class Common
      * @param $type
      * @return string
      */
-    public function generateCode($productId, $type)
+    public static function generateCode($productId, $type)
     {
         $microtime = intval(microtime(true) * 10000);
         $code = $microtime . '|' . $productId . '|' . $type;
