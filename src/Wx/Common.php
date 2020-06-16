@@ -71,7 +71,7 @@ class Common
      * @param $appid
      * @param $secret
      * @param string $grantType
-     * @return mixed
+     * @return array
      */
     public static function getAccessToken($appid,$secret,$grantType='client_credential')
     {
