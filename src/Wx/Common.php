@@ -26,10 +26,10 @@ class Common
         $code = $input::getCode();
         $nonceStr = $input::getNonceStr();
         $halt = $input::getSalt();
-        if (!$code || !$nonceStr || !$halt){
-            throw new GenerateCodeSignException("code ,nonceStr,halt 不能为空",2);
+        if (!$code || !$nonceStr || !$halt) {
+            throw new GenerateCodeSignException("code ,nonceStr,halt 不能为空", 2);
         }
-        return md5(md5($code.$nonceStr,$halt));
+        return md5(md5($code . $nonceStr, $halt));
     }
 
     /**
@@ -37,10 +37,10 @@ class Common
      * @param $type
      * @return string
      */
-    public function generateCode($productId,$type)
+    public function generateCode($productId, $type)
     {
-        $microtime = intval(microtime(true)*10000);
-        $code = $microtime.'|'.$productId.'|'.$type;
+        $microtime = intval(microtime(true) * 10000);
+        $code = $microtime . '|' . $productId . '|' . $type;
         return $code;
     }
 }
