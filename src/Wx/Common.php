@@ -41,16 +41,17 @@ class Common
      * @return bool
      * @throws GenerateCodeSignException
      */
-    public static function verifyCodeSign(GenerateCodeInterface $input,$signInput)
+    public static function verifyCodeSign(GenerateCodeInterface $input, $signInput)
     {
         $code = $input->getCode();
         $nonceStr = $input->getNonceStr();
-        $halt = $input->getSalt();
-        if (!$code || !$nonceStr || !$halt) {
-            throw new GenerateCodeSignException("code ,nonceStr,halt 不能为空", 2);
+        $salt = $input->getSalt();
+        $timeStamp = $input->getTimeStamp();
+        if (!$code || !$nonceStr || !$salt || !$timeStamp) {
+            throw new GenerateCodeSignException("code ,nonceStr,halt ,timeStamp 不能为空", 2);
         }
-        $sign = md5(md5($code . $nonceStr, $halt));
-        return $sign === $signInput ? true :false;
+        $sign = md5(md5($code . $nonceStr.$timeStamp).$salt);
+        return $sign === $signInput ? true : false;
 
     }
 
@@ -73,11 +74,11 @@ class Common
      * @param string $grantType
      * @return array
      */
-    public static function getAccessToken($appid,$secret,$grantType='client_credential')
+    public static function getAccessToken($appid, $secret, $grantType = 'client_credential')
     {
         $client = new Http();
         $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=$grantType&appid=$appid&secret=$secret";
-        return json_decode($client->get($url),true);
+        return json_decode($client->get($url), true);
     }
 
     /**
@@ -86,12 +87,12 @@ class Common
      * @param $params
      * @return mixed
      */
-    public static function createQrCodeByWx($accessToken,$params)
+    public static function createQrCodeByWx($accessToken, $params)
     {
         $url = "https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=$accessToken";
         $client = new Http();
         $params = json_encode($params);
-        return $client ->post($url,$params,true);
+        return $client->post($url, $params, true);
     }
 
 }
