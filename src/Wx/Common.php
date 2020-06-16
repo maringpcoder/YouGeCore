@@ -16,6 +16,7 @@ class Common
 {
 
     /**
+     *
      * md5(md5(code.nonce_str.timestamp).halt)
      * @param GenerateCodeInterface $input
      * @return string
