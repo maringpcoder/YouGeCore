@@ -49,7 +49,7 @@ class Http
         curl_setopt($this->curl, CURLOPT_POST, 1);
         curl_setopt($this->curl, CURLOPT_HEADER, 0);
         if ($json==true) {
-            curl_setopt($this->curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json; charset=utf-8', 'Content-Length:' . strlen($data)]);
+            curl_setopt($this->curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json;', 'Content-Length:' . strlen($data)]);
         }
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
         $response = curl_exec($this->curl);
