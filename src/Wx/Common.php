@@ -24,9 +24,9 @@ class Common
      */
     public static function generateCodeSign(GenerateCodeInterface $input)
     {
-        $code = $input::getCode();
-        $nonceStr = $input::getNonceStr();
-        $halt = $input::getSalt();
+        $code = $input->getCode();
+        $nonceStr = $input->getNonceStr();
+        $halt = $input->getSalt();
         if (!$code || !$nonceStr || !$halt) {
             throw new GenerateCodeSignException("code ,nonceStr,halt 不能为空", 2);
         }
