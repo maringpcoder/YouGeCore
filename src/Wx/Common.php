@@ -80,11 +80,16 @@ class Common
         return json_decode($client->get($url),true);
     }
 
-    public static function createQrCodeByWx($accessToken)
+    /**
+     * 获取二维码
+     * @param $accessToken
+     * @param $params
+     */
+    public static function createQrCodeByWx($accessToken,$params)
     {
-        $url = "https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=$accessToken";
+        $url = "https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=$accessToken";
         $client = new Http();
-        $client ->post($url);
+        $client ->post($url,$params);
     }
 
 }
