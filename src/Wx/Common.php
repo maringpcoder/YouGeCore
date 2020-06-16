@@ -84,12 +84,13 @@ class Common
      * 获取二维码
      * @param $accessToken
      * @param $params
+     * @return mixed
      */
     public static function createQrCodeByWx($accessToken,$params)
     {
         $url = "https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=$accessToken";
         $client = new Http();
-        $client ->post($url,$params);
+        return $client ->post($url,$params);
     }
 
 }
