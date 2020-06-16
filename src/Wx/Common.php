@@ -41,6 +41,7 @@ class Common
     {
         $microtime = intval(microtime(true) * 10000);
         $code = $microtime . '|' . $productId . '|' . $type;
-        return $code;
+        return md5($code);
     }
+
 }
