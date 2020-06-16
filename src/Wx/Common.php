@@ -90,7 +90,8 @@ class Common
     {
         $url = "https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=$accessToken";
         $client = new Http();
-        return $client ->post($url,$params);
+        $params = json_encode($params);
+        return $client ->post($url,$params,true);
     }
 
 }
