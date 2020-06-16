@@ -9,6 +9,7 @@
 namespace YouGeCore\Wx;
 
 
+use YouGeCore\Client\Http;
 use YouGeCore\Wx\Config\GenerateCodeInterface;
 use YouGeCore\Wx\Exceptions\GenerateCodeSignException;
 
@@ -63,6 +64,20 @@ class Common
         $microtime = intval(microtime(true) * 10000);
         $code = $microtime . '|' . $productId . '|' . $type;
         return md5($code);
+    }
+
+    /**
+     * 小程序获取access_token
+     * @param $appid
+     * @param $secret
+     * @param string $grantType
+     * @return mixed
+     */
+    public static function getAccessToken($appid,$secret,$grantType='client_credential')
+    {
+        $client = new Http();
+        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=$grantType&appid=$appid&secret=$secret";
+        return $client->get($url);
     }
 
 }

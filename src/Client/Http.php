@@ -8,7 +8,6 @@
 
 namespace YouGeCore\Client;
 
-use GuzzleHttp\Client;
 
 class Http
 {
