@@ -80,4 +80,11 @@ class Common
         return json_decode($client->get($url),true);
     }
 
+    public static function createQrCodeByWx()
+    {
+//        https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode
+        $client = new Http();
+        $client ->post();
+    }
+
 }
