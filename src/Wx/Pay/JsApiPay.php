@@ -69,7 +69,7 @@ class JsApiPay
             || !array_key_exists("prepay_id", $UnifiedOrderResult)
             || $UnifiedOrderResult['prepay_id'] == "")
         {
-            throw new WxPayException("参数错误:".json_encode($UnifiedOrderResult));
+            throw new WxPayException("参数错误:".json_encode($UnifiedOrderResult)." .....");
         }
 
         $jsapi = new WxPayJsApiPay();
