@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8238fde8fa0469193ea525951e936911",
+    "content-hash": "c1402bb7e2f3e38cf14eca6e4c8b1a9f",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -645,6 +645,39 @@
                 "mongodb"
             ],
             "time": "2019-02-27T16:22:45+00:00"
+        },
+        {
+            "name": "make3782/laravel-mongodb-transactions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/make3782/laravel-mongodb-transactions.git",
+                "reference": "86779006fa2165507b7cff63458b3a1bb15393d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/make3782/laravel-mongodb-transactions/zipball/86779006fa2165507b7cff63458b3a1bb15393d0",
+                "reference": "86779006fa2165507b7cff63458b3a1bb15393d0",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "jenssegers/mongodb": "^3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "扩展了Jenssegers/laravel-mongodb，支持事务功能",
+            "time": "2020-01-07T04:15:31+00:00"
         },
         {
             "name": "mongodb/mongodb",
@@ -1359,7 +1392,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "make3782/laravel-mongodb-transactions": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
