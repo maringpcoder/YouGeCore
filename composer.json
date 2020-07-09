@@ -11,8 +11,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "guzzlehttp/guzzle": "6.5.4",
-    "jenssegers/mongodb": "3.4.6"
+    "guzzlehttp/guzzle": "6.5.4"
   },
   "autoload": {
     "psr-4": {
