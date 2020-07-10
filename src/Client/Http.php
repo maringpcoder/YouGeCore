@@ -13,6 +13,7 @@ class Http
 {
     /** @var null|resource */
     protected $curl = null;
+    public $header = [];
 
     public function __construct()
     {
@@ -43,13 +44,14 @@ class Http
         return $response;
     }
 
-    public function post($url, $data, $json=false)
+    public function post($url, $data, $json = false)
     {
         curl_setopt($this->curl, CURLOPT_URL, $url);
         curl_setopt($this->curl, CURLOPT_POST, 1);
         curl_setopt($this->curl, CURLOPT_HEADER, 0);
-        if ($json==true) {
-            curl_setopt($this->curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json;', 'Content-Length:' . strlen($data)]);
+        if ($json == true) {
+            $header = !$this->header ? ['Content-Type: application/json;', 'Content-Length:' . strlen($data)] : $this->header;
+            curl_setopt($this->curl, CURLOPT_HTTPHEADER, $header);
         }
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
         $response = curl_exec($this->curl);
