@@ -1,5 +1,6 @@
 <?php
 /**
+ * 用户预订酒店成功后发送给用户自己的消息体
  * Created by PhpStorm.
  * User: marin
  * Date: 2020/7/11
@@ -15,7 +16,7 @@ class PaySuccessMsgDataItem
     protected $thing8 = '';//房型类型
     protected $date5 = '';//入住日期
     protected $date6 = '';//离店日期
-    protected $thing12 = '';//备注
+    protected $thing12 = '订单提交成功，等待酒店确认订单';//备注
 
 
     /**
