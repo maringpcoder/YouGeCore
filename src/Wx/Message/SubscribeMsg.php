@@ -28,7 +28,7 @@ class SubscribeMsg
      * @param $option
      * @return mixed
      */
-    public  function sendSubMessage(RequestParams $requestParams,$option)
+    public  function sendSubMessage(RequestParams $requestParams)
     {
         $client = new Http();
 
