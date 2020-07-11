@@ -1,6 +1,6 @@
 <?php
 /**
- * 用户预订酒店成功后发送给用户自己的消息体
+ * 酒店订单状态变化推送的消息体
  * Created by PhpStorm.
  * User: marin
  * Date: 2020/7/11
@@ -18,7 +18,6 @@ class PaySuccessMsgDataItem
     protected $character_string13 = '';//入离日期,32位以内数字、字母或符号
     protected $number7 = '';//房间数量
     protected $thing12 = '';//备注 20个以内字符
-
 
 
     /**

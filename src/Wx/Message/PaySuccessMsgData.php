@@ -26,12 +26,12 @@ abstract class PaySuccessMsgData
      */
     public function createMsgItem(PaySuccessMsgDataItem $paySuccessMsgDataItem)
     {
-        $this->msgData =  [
-            'thing1'=>['value'=>$paySuccessMsgDataItem->getThing1()],
-            'thing8'=>['value'=>$paySuccessMsgDataItem->getThing8()],
-            'character_string13'=>['value'=>$paySuccessMsgDataItem->getCharacterString13()],
-            'number7'=>['value'=>$paySuccessMsgDataItem->getCharacterString13()],
-            'thing12'=>['value'=>$paySuccessMsgDataItem->getThing12()]
+        $this->msgData = [
+            'thing1' => ['value' => $paySuccessMsgDataItem->getThing1()],
+            'thing8' => ['value' => $paySuccessMsgDataItem->getThing8()],
+            'character_string13' => ['value' => $paySuccessMsgDataItem->getCharacterString13()],
+            'number7' => ['value' => $paySuccessMsgDataItem->getCharacterString13()],
+            'thing12' => ['value' => $paySuccessMsgDataItem->getThing12()]
         ];
         return $this;
     }

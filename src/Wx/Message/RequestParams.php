@@ -16,15 +16,15 @@ abstract class RequestParams
     /**
      * @var string 接收者（用户）的 openid
      */
-    protected $toUser="";
+    protected $toUser = "";
     /**
      * @var string 所需下发的订阅模板id
      */
-    protected $templateId="";
+    protected $templateId = "";
     /**
      * @var string 点击模板卡片后的跳转页面，仅限本小程序内的页面。支持带参数,（示例index?foo=bar）。该字段不填则模板无跳转。
      */
-    protected $page="";
+    protected $page = "";
 
     /**
      * @var PaySuccessMsgData
@@ -34,12 +34,12 @@ abstract class RequestParams
     /**
      * @var string 跳转小程序类型：developer为开发版；trial为体验版；formal为正式版；默认为正式版
      */
-    protected $miniprogramState='';
+    protected $miniprogramState = '';
 
     /**
      * @var string
      */
-    protected $lang='zh_CN';
+    protected $lang = 'zh_CN';
 
     /**
      * @return string
