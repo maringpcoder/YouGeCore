@@ -23,7 +23,7 @@ class SubscribeMsg
 
 
     /**
-     * 预订成功之后发送给用户的预订成功消息
+     * 发送酒店订单变更消息
      * @param RequestParams $requestParams
      * @param $option
      * @return mixed
@@ -38,8 +38,6 @@ class SubscribeMsg
 
         $paySuccessMsgData = $requestParams->getData();
         $data = $paySuccessMsgData->createMsgItem($this->msgDataItem)->getMsgData();
-
-
         //构造请求参数
         $req = [];
         $req['touser'] = $requestParams->getToUser();
