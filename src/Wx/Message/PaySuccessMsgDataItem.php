@@ -12,11 +12,13 @@ namespace YouGeCore\Wx\Message;
 
 class PaySuccessMsgDataItem
 {
-    protected $thing1 = '';//酒店名称
-    protected $thing8 = '';//房型类型
-    protected $date5 = '';//入住日期
-    protected $date6 = '';//离店日期
-    protected $thing12 = '订单提交成功，等待酒店确认订单';//备注
+
+    protected $thing1 = '';//酒店名称 20个以内字符
+    protected $thing8 = '';//房型类型 20个以内字符
+    protected $character_string13 = '';//入离日期,32位以内数字、字母或符号
+    protected $number7 = '';//房间数量
+    protected $thing12 = '';//备注 20个以内字符
+
 
 
     /**
@@ -54,33 +56,33 @@ class PaySuccessMsgDataItem
     /**
      * @return string
      */
-    public function getDate5()
+    public function getCharacterString13()
     {
-        return $this->date5;
+        return $this->character_string13;
     }
 
     /**
-     * @param string $date5
+     * @param string $character_string13
      */
-    public function setDate5($date5)
+    public function setCharacterString13($character_string13)
     {
-        $this->date5 = $date5;
+        $this->character_string13 = $character_string13;
     }
 
     /**
      * @return string
      */
-    public function getDate6()
+    public function getNumber7()
     {
-        return $this->date6;
+        return $this->number7;
     }
 
     /**
-     * @param string $date6
+     * @param string $number7
      */
-    public function setDate6($date6)
+    public function setNumber7($number7)
     {
-        $this->date6 = $date6;
+        $this->number7 = $number7;
     }
 
     /**
@@ -98,4 +100,5 @@ class PaySuccessMsgDataItem
     {
         $this->thing12 = $thing12;
     }
+
 }

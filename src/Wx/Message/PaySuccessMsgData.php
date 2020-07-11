@@ -29,8 +29,8 @@ abstract class PaySuccessMsgData
         $this->msgData =  [
             'thing1'=>['value'=>$paySuccessMsgDataItem->getThing1()],
             'thing8'=>['value'=>$paySuccessMsgDataItem->getThing8()],
-            'date5'=>['value'=>$paySuccessMsgDataItem->getDate5()],
-            'date6'=>['value'=>$paySuccessMsgDataItem->getDate6()],
+            'character_string13'=>['value'=>$paySuccessMsgDataItem->getCharacterString13()],
+            'number7'=>['value'=>$paySuccessMsgDataItem->getCharacterString13()],
             'thing12'=>['value'=>$paySuccessMsgDataItem->getThing12()]
         ];
         return $this;
