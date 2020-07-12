@@ -22,6 +22,18 @@ abstract class RequestParams
      */
     protected $templateId = "";
     /**
+     * @var string
+     */
+    protected $lang = 'zh_CN';
+
+    /**
+     * @param string $lang
+     */
+    public function setLang($lang)
+    {
+        $this->lang = $lang;
+    }
+    /**
      * @var string 点击模板卡片后的跳转页面，仅限本小程序内的页面。支持带参数,（示例index?foo=bar）。该字段不填则模板无跳转。
      */
     protected $page = "";
@@ -36,10 +48,39 @@ abstract class RequestParams
      */
     protected $miniprogramState = '';
 
+
+
     /**
-     * @var string
+     * @param string $toUser
      */
-    protected $lang = 'zh_CN';
+    public function setToUser($toUser)
+    {
+        $this->toUser = $toUser;
+    }
+
+    /**
+     * @param string $templateId
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->templateId = $templateId;
+    }
+
+    /**
+     * @param string $page
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+    }
+
+    /**
+     * @param string $miniprogramState
+     */
+    public function setMiniprogramState($miniprogramState)
+    {
+        $this->miniprogramState = $miniprogramState;
+    }
 
     /**
      * @return string
