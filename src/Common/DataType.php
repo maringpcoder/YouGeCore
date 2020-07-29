@@ -28,5 +28,8 @@ class DataType
         self::Sys_Closed=>'自动关闭',
         self::Finished=>'完成'
     ];
-
+    /** 供应商类型 */
+    const HOTEL_SUP=1;//酒店供应商
+    const LINE_SUP=2;//线路供应商
+    const TICKETS_SUP=3;//门票
 }
