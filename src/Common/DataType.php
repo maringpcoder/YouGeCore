@@ -11,6 +11,9 @@ namespace YouGeCore\Common;
 
 class DataType
 {
+    //通用业务状态定义,常用于退款,支付,等其他日志记录中
+    const SUCCESS = 1;
+    const FAILED = 2;
 
     //订单状态  1待支付,2待确认,3待入住, 4已关闭,5,超时未付款自动关闭,  6已完成
     const Waiting_pay = 1;
@@ -19,6 +22,7 @@ class DataType
     const Been_closed = 4;
     const Sys_Closed = 5;
     const Finished = 6;
+
     //状态描述
     const ORDER_STATUS_TXT = [
         self::Waiting_pay => '待支付',
