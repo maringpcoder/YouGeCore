@@ -17,6 +17,17 @@ class Pay
     /** @var \Alipay\EasySDK\Kernel\Config $config  */
     protected $config;
 
+    /**
+     * 异步通知验签
+     * @param $params
+     * @return bool
+     * @throws \Exception
+     */
+    public function checkNotifySign($params)
+    {
+        Factory::setOptions($this->config);
+        return Factory::payment()->common()->verifyNotify($params);
+    }
 
     /**
      * 统一收单下单并支付页面接口
