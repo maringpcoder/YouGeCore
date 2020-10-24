@@ -44,6 +44,7 @@ class WxPayApiAop
         $input->SetTrade_type($params->getTradeType());//交易类型 这个地方可以固定成JSAPI即可
         $input->SetOpenid($params->getOpenid());//用户应用唯一标识
         $input->SetFreeType($params->getFreeType());//币种
+        $input->SetProduct_id($params->getProductId());//产品id，NATIVE交易类型必须传参
 
         $order = WxPayApi::unifiedOrder($config, $input);
         $jsApiParameters = $tools->GetJsApiParameters($order,$config);
