@@ -32,8 +32,6 @@ class WxPayApiAop
         $tools = new JsApiPay();
         //②、统一下单
         $input = new WxPayUnifiedOrder();
-
-
         $input->SetBody($params->getBody());//商品描述
         $input->SetAttach($params->getAttach());//附加数据,可以是平台名字或者商家名字
         $input->SetOut_trade_no($params->getOutTradeNo());//商户订单号
@@ -45,7 +43,6 @@ class WxPayApiAop
         $input->SetOpenid($params->getOpenid());//用户应用唯一标识
         $input->SetFreeType($params->getFreeType());//币种
         $input->SetProduct_id($params->getProductId());//产品id，NATIVE交易类型必须传参
-
         $order = WxPayApi::unifiedOrder($config, $input);
         $jsApiParameters = $tools->GetJsApiParameters($order,$config);
         return $jsApiParameters;

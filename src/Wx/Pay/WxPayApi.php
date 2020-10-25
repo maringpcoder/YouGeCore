@@ -547,6 +547,10 @@ class WxPayApi
             $objInput->SetDevice_info($data["device_info"]);
         }
 
+        if (array_key_exists("code_url",$data)){
+            $objInput->SetCodeUrl($data['code_url']);
+        }
+
         try{
             self::report($config, $objInput);
         } catch (WxPayException $e){

@@ -72,6 +72,17 @@ class WxPayReport extends WxPayDataBase
     {
         $this->values['device_info'] = $value;
     }
+
+    public function SetCodeUrl($value)
+    {
+        $this->values['device_info'] = $value;
+    }
+
+    public function GetCodeUrl($value)
+    {
+        return $this->values['code_url'];
+    }
+
     /**
      * 获取微信支付分配的终端设备号，商户自定义的值
      * @return string
