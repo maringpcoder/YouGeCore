@@ -79,6 +79,7 @@ class JsApiPay
         $jsapi->SetNonceStr(WxPayApi::getNonceStr());
         $jsapi->SetPackage("prepay_id=" . $UnifiedOrderResult['prepay_id']);
         $jsapi->SetPaySign($jsapi->MakeSign($config));
+        $jsapi->SetCodeUrl($UnifiedOrderResult['code_url']);
         $parameters = json_encode($jsapi->GetValues());
         return $parameters;
     }
