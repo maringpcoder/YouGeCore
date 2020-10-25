@@ -37,8 +37,14 @@ class WxPayJsApiPay extends WxPayDataBase
         return array_key_exists('appId', $this->values);
     }
 
-
-
+    public function GetCodeUrl()
+    {
+        return $this->values['code_url'];
+    }
+    public function SetCodeUrl($value)
+    {
+        $this->values['code_url'] = $value;
+    }
 
 
     /**
