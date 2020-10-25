@@ -12,6 +12,20 @@ namespace YouGeCore\Wx\Pay\Lib;
 
 class WxPayReport extends WxPayDataBase
 {
+    public function SetCodeUrl($value)
+    {
+        $this->values['code_url'] = $value;
+    }
+    public function GetCodeUrl($value)
+    {
+        return $this->values['code_url'];
+    }
+
+    public function IsCodeUrlSet()
+    {
+        return array_key_exists("code_url",$this->values);
+    }
+
     /**
      * 设置微信分配的公众账号ID
      * @param string $value
@@ -72,17 +86,6 @@ class WxPayReport extends WxPayDataBase
     {
         $this->values['device_info'] = $value;
     }
-
-    public function SetCodeUrl($value)
-    {
-        $this->values['device_info'] = $value;
-    }
-
-    public function GetCodeUrl($value)
-    {
-        return $this->values['code_url'];
-    }
-
     /**
      * 获取微信支付分配的终端设备号，商户自定义的值
      * @return string
