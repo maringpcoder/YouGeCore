@@ -51,6 +51,7 @@ class Pay
         $config->protocol = $option->getProtocol();
         $config->gatewayHost = $option->getGatewayHost();
         $config->signType = $option->getSignType();
+        $config->merchantCertSN=true;
 
         $config->appId = $option->getAppId();
 
