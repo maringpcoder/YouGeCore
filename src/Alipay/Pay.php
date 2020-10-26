@@ -14,7 +14,7 @@ use Alipay\EasySDK\Kernel\Factory;
 
 class Pay
 {
-    /** @var \Alipay\EasySDK\Kernel\Config $config  */
+    /** @var \Alipay\EasySDK\Kernel\Config $config */
     protected $config;
 
     /**
@@ -35,7 +35,7 @@ class Pay
      * @return string
      * @throws \Exception
      */
-    public  function paymentPagePay(PaymentPagePay $params)
+    public function paymentPagePay(PaymentPagePay $params)
     {
         Factory::setOptions($this->config);
         return Factory::payment()->page()->pay(
@@ -45,13 +45,13 @@ class Pay
             $params->getReturnUrl())->body;
     }
 
-    public  function createOption(Setting $option)
+    public function createOption(Setting $option)
     {
         $config = new Config();
         $config->protocol = $option->getProtocol();
         $config->gatewayHost = $option->getGatewayHost();
         $config->signType = $option->getSignType();
-        $config->merchantCertSN=true;
+        $config->merchantCertSN = true;
 
         $config->appId = $option->getAppId();
 
@@ -66,12 +66,12 @@ class Pay
         // $options->alipayPublicKey = '<-- 请填写您的支付宝公钥，例如：MIIBIjANBg... -->';
 
         //可设置异步通知接收服务地址（可选）
-        if ($notifyUrl = $option->getNotifyUrl()){
+        if ($notifyUrl = $option->getNotifyUrl()) {
             $config->notifyUrl = $option->getNotifyUrl();
         }
 
         //可设置AES密钥，调用AES加解密相关接口时需要（可选）
-        if ($encryptKey = $option->getEncryptKey()){
+        if ($encryptKey = $option->getEncryptKey()) {
             $config->encryptKey = $option->getEncryptKey();
         }
         $this->config = $config;
