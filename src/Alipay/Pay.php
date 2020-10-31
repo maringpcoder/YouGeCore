@@ -45,6 +45,18 @@ class Pay
             $params->getReturnUrl())->body;
     }
 
+    /**
+     * @param $outTrade
+     * @param $amount
+     * @return \Alipay\EasySDK\Payment\Common\Models\AlipayTradeRefundResponse
+     * @throws \Exception
+     */
+    public function refund($outTrade,$amount)
+    {
+        Factory::setOptions($this->config);
+        return Factory::payment()->common()->refund($outTrade,$amount);
+    }
+
     public function createOption(Setting $option)
     {
         $config = new Config();
